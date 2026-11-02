@@ -17,7 +17,7 @@ feat: add user profile
 ```text
 feat(user): add user profile
 ```
-### Основные type
+### Conventional Commits - основные типы
 | Type       | Когда использовать                        | Пример                                    |
 |------------|--------------------------------------------|-------------------------------------------|
 | `feat`     | Новая функциональность                     | `feat(user): add profile endpoint`        |
