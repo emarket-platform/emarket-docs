@@ -1,0 +1,32 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Logs
+*.log
+logs/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Generated documentation
+_site/
+dist/
+build/
