@@ -606,3 +606,48 @@ src/
 **Ключевое правило интеграции:** `emarket-web` обращается исключительно
 к `emarket-api-gateway`. Внутренние backend-сервисы и BFF остаются
 скрытыми от frontend.
+
+# 9. Проверка всех маршрутов (auth-session.ts)
+
+Запусти приложение:
+```bash
+npm run dev
+```
+
+Проверь следующие URL в зависимости от статуса аутентификации пользователя.
+
+---
+
+### Статус: `unauthenticated`
+
+| URL | Ожидаемый результат |
+| :--- | :--- |
+| `/` | `HomePage` |
+| `/login` | `LoginPage` |
+| `/register` | `RegisterPage` |
+| `/forgot-password` | `ForgotPasswordPage` |
+| `/reset-password` | `ResetPasswordPage` |
+| `/products` | `ProductsPage` |
+| `/profile` | Redirect на `/login` |
+| `/profile/addresses` | Redirect на `/login` |
+| `/profile/preferences` | Redirect на `/login` |
+| `/403` | `ForbiddenPage` |
+| `/unknown` | `NotFoundPage` |
+
+---
+
+### Статус: `authenticated`
+
+| URL | Ожидаемый результат |
+| :--- | :--- |
+| `/` | `HomePage` |
+| `/login` | Redirect на `/profile` |
+| `/register` | Redirect на `/profile` |
+| `/forgot-password` | Redirect на `/profile` |
+| `/reset-password` | Redirect на `/profile` |
+| `/products` | `ProductsPage` |
+| `/profile` | `ProfilePage` |
+| `/profile/addresses` | `AddressesPage` |
+| `/profile/preferences` | `PreferencesPage` |
+| `/403` | `ForbiddenPage` |
+| `/unknown` | `NotFoundPage` |
