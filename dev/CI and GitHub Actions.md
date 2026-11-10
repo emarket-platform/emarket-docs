@@ -87,20 +87,24 @@ jobs:
     timeout-minutes: 15
 
     steps:
+      # 1. Checkout source code
       - name: Checkout repository
         uses: actions/checkout@v7
 
+      # 2. Install JDK 21
       - name: Set up JDK 21
         uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: '21'
 
+      # 3. Setup Gradle
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v6
         with:
           cache-provider: basic
 
+      # 4. Build, formatting checks and tests
       - name: Build and run checks
         run: ./gradlew --no-daemon clean build
 ```
