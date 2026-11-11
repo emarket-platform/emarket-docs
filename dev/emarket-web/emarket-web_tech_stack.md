@@ -36,79 +36,23 @@
 
 ---
 
-## 2. Архитектура Frontend (`Feature-Based`)
+## 2. Архитектура Frontend
 
-Для проекта рекомендуется использовать **Feature-Based Architecture** с элементами **Clean Architecture**.
+Для проекта рекомендуется использовать **Featured-Sliced Design (FSD)**.
 
 ```text
-emarket-web/
-│
-├── public/
-│
-├── src/
-│   ├── app/
-│   │   ├── providers/
-│   │   │   ├── query-provider.tsx
-│   │   │   ├── router-provider.tsx
-│   │   │   └── theme-provider.tsx
-│   │   ├── router/
-│   │   │   └── index.tsx
-│   │   └── app.tsx
-│   │
-│   ├── features/
-│   │   ├── auth/
-│   │   │   ├── api/
-│   │   │   ├── components/
-│   │   │   ├── hooks/
-│   │   │   ├── schemas/
-│   │   │   └── types/
-│   │   ├── profile/
-│   │   ├── addresses/
-│   │   └── preferences/
-│   │
-│   ├── shared/
-│   │   ├── api/
-│   │   │   ├── client/
-│   │   │   ├── generated/
-│   │   │   └── errors/
-│   │   ├── components/
-│   │   │   ├── ui/
-│   │   │   └── common/
-│   │   ├── hooks/
-│   │   ├── lib/
-│   │   ├── utils/
-│   │   └── types/
-│   │
-│   ├── layouts/
-│   │   ├── main-layout/
-│   │   └── auth-layout/
-│   │
-│   ├── pages/
-│   │   ├── home/
-│   │   ├── login/
-│   │   ├── register/
-│   │   ├── profile/
-│   │   └── not-found/
-│   │
-│   ├── i18n/
-│   ├── styles/
-│   │   └── globals.css
-│   ├── test/
-│   └── main.tsx
-│
-├── .husky/
-├── .github/
-│   └── workflows/
-│
-├── .env.development
-├── .env.production
-├── .env.example
-├── eslint.config.js
-├── prettier.config.js
-├── vite.config.ts
-├── tsconfig.json
-├── package.json
-└── README.md
+   src/
+   ├── app/                  # Инициализация приложения
+   │
+   ├── pages/                # Страницы приложения (маршруты)
+   │
+   ├── widgets/              # Крупные композитные блоки интерфейса
+   │
+   ├── features/             # Пользовательские сценарии (интерактивные действия)
+   │
+   ├── entities/             # Бизнес-сущности
+   │
+   └── shared/               # Переиспользуемый код без бизнес-логики
 ```
 
 ### Преимущества подхода
