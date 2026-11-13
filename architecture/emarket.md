@@ -1,3 +1,64 @@
+# Примерное описание emarket-platform
+
+Frontend:
+- React, TypeScript
+- Feature-Sliced Design
+- сборка на Vite
+- стили с помощью module.scss
+-  поддержка обычных пользователей и администратора
+ - светлая и темная тема
+-  Figma-макеты для стиля  Soft Modern
+- поддержка мультиязычности
+- GitHub в качестве удаленного репозитория
+- CI настроен на GitHub
+- Документация
+- имена git commit должны быть по конценции
+- Github автоформат моего source кода pre-commit
+
+Backend:
+- Java 21
+-  Spring Boot, Spring API-Gateway, Spring Data JPA, Spring Cloud,  Spring Security, Spring Actuator
+- сборка на Gradle.kts
+-  высоконагруженный backend 
+- GitHub в качестве удаленного репозитория
+- CI настроен на GitHub
+-  микросервисы.  
+- Микросервисы должны разрабатываться и деплоиться независимо. Внедрять микросервисы постепенно
+- каждый микросервис в отдельном репозитории. Никакого монолита
+- два режима работы - default, deploy
+- в режиме  default все мои сервисы должны запускаться напрямую на host машине.
+- в режиме  deploy мои сервисы должны разворачиваться в docker контейнерах и minikube.
+- централизованное конфигурирование микросервисов (Spring Cloud Config)
+- паттерны - Api Gateway, Circuit Breaker, Retry, Transaction Outbox. BFF (Mobile, Web), CQRS, Database-per-Service
+- API Gateway должен быть единственной публичной точкой входа для моих микросервисов
+- возможность конфигурации через Spring Cloud
+- поддержка мультиязычности
+- observability, monitoring, alerts - Grafana, Prometheus, ELK
+- сбор логов
+- CDC (Debezium)
+- Jaeger - distributed tracing
+- secrets - Vault
+- REST, GraphQL
+- Postgresql  Hibernate 
+ - NoSQL БД
+- объектным хранилища (бесплатная альтернатива AWS S3)
+- полнотекстовый поиск
+- аутентификация/авторизация, JWT токен
+- Kafka + Schema registry (Avro)
+- рассылка уведомлений с различными шаблонами (email. in-app)
+- кэширование
+- часть данных могут иметь гибкую структуру
+- оплата + fake payment provider
+- история покупок должна храниться 5 лет
+- администрирование
+- генератор тестовых данных
+- Github автоформат моего source кода pre-commit
+- в режиме deploy микросервисы должны разворачиваться в Docker  и minikube
+- для интеграционных тестов можно использовать Testcontainers
+- Документация
+- возможность тестировать API через браузер (Swagger)
+- имена git commit должны быть по конценции
+
 # Общая архитектура всей платформы
 ```
 # emarket — Senior Java Fullstack Developer Portfolio Project
